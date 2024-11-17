@@ -1,4 +1,3 @@
-/* Загальні стилі */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -16,7 +15,6 @@ p {
   padding: 0;
 }
 
-/* Стилі для форми пошуку */
 .search-form {
   display: flex;
   justify-content: center;
@@ -56,7 +54,6 @@ p {
   background-color: #2980b9;
 }
 
-/* Галерея зображень */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -82,7 +79,6 @@ p {
   display: block;
 }
 
-/* Індикатор завантаження */
 #loader {
   display: flex;
   justify-content: center;
@@ -118,12 +114,10 @@ p {
   }
 }
 
-/* iziToast стилі (вбудовані бібліотекою) */
 .iziToast {
   font-size: 14px;
 }
 
-/* Адаптивність */
 @media (max-width: 768px) {
   #search-form input {
     width: 200px;
