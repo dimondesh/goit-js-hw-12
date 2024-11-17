@@ -2,17 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS-HW-09</title>
+    <title>Image Search</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <script type="module" src="./main.js" defer></script>
   </head>
   <body>
-    <main>
-      <ul>
-        <li><a href="./1-timer.html">Timer</a></li>
-        <li><a href="./2-snackbar.html">Promise Generator</a></li>
-      </ul>
-    </main>
+    <div class="search-form">
+      <form id="search-form">
+        <input
+          type="text"
+          name="searchQuery"
+          placeholder="Search images..."
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="gallery"></div>
+    <div id="loader" class="hidden">
+      <div class="loader"></div>
+    </div>
   </body>
 </html>
