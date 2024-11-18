@@ -62,7 +62,7 @@ form.addEventListener('submit', async event => {
       });
     } else {
       gallery.innerHTML = renderGallery(data.hits);
-      lightbox.refresh(); // Оновлюємо існуючий екземпляр
+      lightbox.refresh();
       totalHits = data.totalHits;
 
       if (totalHits > data.hits.length) {
@@ -87,7 +87,7 @@ loadMoreBtn.addEventListener('click', async () => {
     const data = await fetchImages(query, page);
 
     gallery.insertAdjacentHTML('beforeend', renderGallery(data.hits));
-    lightbox.refresh(); // Оновлюємо існуючий екземпляр
+    lightbox.refresh();
 
     if (page * 15 >= totalHits) {
       hideLoadMoreBtn();
