@@ -17,7 +17,7 @@ document.body.appendChild(loadMoreBtn);
 let query = '';
 let page = 1;
 let totalHits = 0;
-let lightbox;
+let lightbox = new SimpleLightbox('.gallery a');
 
 function showLoader() {
   loader.classList.remove('hidden');
@@ -62,8 +62,7 @@ form.addEventListener('submit', async event => {
       });
     } else {
       gallery.innerHTML = renderGallery(data.hits);
-      lightbox = new SimpleLightbox('.gallery a');
-      lightbox.refresh();
+      lightbox.refresh(); // Оновлюємо існуючий екземпляр
       totalHits = data.totalHits;
 
       if (totalHits > data.hits.length) {
@@ -88,7 +87,7 @@ loadMoreBtn.addEventListener('click', async () => {
     const data = await fetchImages(query, page);
 
     gallery.insertAdjacentHTML('beforeend', renderGallery(data.hits));
-    lightbox.refresh();
+    lightbox.refresh(); // Оновлюємо існуючий екземпляр
 
     if (page * 15 >= totalHits) {
       hideLoadMoreBtn();
